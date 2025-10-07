@@ -40,22 +40,23 @@ Usamos o unsloth, que é um framework Python de código aberto projetado para to
 
 A seguir iremos falar sobre as variaves, importante destacar que para redução de custos limitamos o número de procesadores para 2. <br><br>
 
-<b>Estrutura: Variável, descrição e valor que usamos.</b><br>
-<b>per_device_train_batch_size</b>	- O tamanho do lote de treinamento por dispositivo (GPU) - <b> Estamos utilizando 2. </b> <br>
-<b>gradient_accumulation_steps</b>	- O número de etapas de retropropagação (backward passes) antes de realizar uma etapa de otimização (update). Ajuda a simular um lote maior. - Estamos usando  4. <br>
-<b>warmup_steps</b> - O número de etapas para aumentar a taxa de aprendizado (learning rate) linearmente a partir de 0. - Estamos usando  5. <br>
-<b>max_steps</b> -	O número máximo de etapas de otimização (não épocas) para executar o treinamento. - Estamos usando  60. <br>
-<b>learning_rate</b> -	A taxa de aprendizado inicial a ser usada para o otimizador. Aqui é 2e-4 .<br>
+<b>Estrutura: Variável,  valor e descrição.</b><br>
+<b>per_device_train_batch_size</b>	= <b> Estamos utilizando 2. </b> - O tamanho do lote de treinamento por dispositivo (GPU) <br>
+<b>gradient_accumulation_steps</b> = <b>Estamos usando 4.</b> -  O número de etapas de retropropagação (backward passes) antes de realizar uma etapa de otimização (update). Ajuda a simular um lote maior.  <br>
+<b>warmup_steps</b> = <b>Estamos usando 5. </b> -  O número de etapas para aumentar a taxa de aprendizado (learning rate) linearmente a partir de 0.  <br>
+<b>max_steps</b> =  <b> Estamos usando 60. </b)- O número máximo de etapas de otimização (não épocas) para executar o treinamento. <br>
+<b>learning_rate</b> = <b> 2e-4</b> -	A taxa de aprendizado inicial a ser usada para o otimizador. <br>
+<b>bf16</b> = Definido como <b>True</b> se o bfloat16 for suportado. - Se deve ser usada precisão de ponto flutuante de 16 bits Brain Float (bfloat16) para treinamento. <br>
+<b>logging_steps</b>	=  <b>1</b> (a cada etapa). -	A frequência com que o log de informações (como a perda de treinamento) deve ser relatado. <br>
+<b>optim</b> = <b>adamw_8bit</b>, uma versão otimizada com 8 bits que economiza memória.  - O otimizador a ser usado. <br>
+<b>weight_decay</b>	= <b>0.01</b> - O fator de penalização de L2 aplicado aos pesos do modelo para evitar overfitting.  <br>
+<b>lr_scheduler_type</b> = <b>linear</b> -	O tipo de agendador (scheduler) para ajustar a taxa de aprendizado durante o treinamento.  <br>
+<b>seed</b>	= <b>3407</b> - A semente (seed) aleatória para garantir a reprodutibilidade dos resultados. <br>
+<b>output_dir</b>	= <b>outputs</b> - O diretório onde os pontos de verificação (checkpoints) e os resultados do treinamento serão salvos. <br>
+<b>report_to</b> = <b>none</b> - Para onde o treinamento deve ser reportado (por exemplo, "wandb", "tensorboard"). <br>
 
-<b>fp16</b> -	Se deve ser usada precisão de ponto flutuante de 16 bits (float16) para treinamento. Definido como True se o bfloat16 não for suportado. <br>
-<b>bf16</b> -	Se deve ser usada precisão de ponto flutuante de 16 bits Brain Float (bfloat16) para treinamento. Definido como True se o bfloat16 for suportado. <br>
-<b>logging_steps</b>	-	A frequência com que o log de informações (como a perda de treinamento) deve ser relatado. Aqui é 1 (a cada etapa). <br>
-<b>optim</b> -	O otimizador a ser usado. Neste caso, é o adamw_8bit, uma versão otimizada com 8 bits que economiza memória. <br>
-<b>weight_decay</b>	-	O fator de penalização de L2 aplicado aos pesos do modelo para evitar overfitting. Aqui é 0.01. <br>
-<b>lr_scheduler_type</b>	-	O tipo de agendador (scheduler) para ajustar a taxa de aprendizado durante o treinamento. Aqui é linear. <br>
-<b>seed</b>	-	A semente (seed) aleatória para garantir a reprodutibilidade dos resultados. Neste caso, é 3407. <br>
-<b>output_dir</b>	-	O diretório onde os pontos de verificação (checkpoints) e os resultados do treinamento serão salvos. Aqui é outputs. <br>
-<b>report_to</b>	- Para onde o treinamento deve ser reportado (por exemplo, "wandb", "tensorboard"). Neste caso, é none (nenhum). <br>
+
+<img width="955" height="563" alt="image" src="https://github.com/user-attachments/assets/8e355024-c708-4e8f-84c9-1b0bc1f5b2a2" />
 
 
 
