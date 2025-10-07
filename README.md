@@ -15,6 +15,8 @@ VIDEO Youtube Explicativo:  LINK <br>
 Arquivos:<br>
 Na pasta TC3-CleanerDataSet - O script em python para tratamento dos dados e limpeza dos mesmos.
 dataset_alpaca_50k.zip - Dataset utilizado para treinar o modelo.
+TechChallenger_003 (1).ipynb - Notebook do Jupyter para o Colab
+
 
 
 Problemática 1:<br><br>
