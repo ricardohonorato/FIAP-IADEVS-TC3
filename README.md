@@ -10,7 +10,7 @@ Rafael Pinheiro RM363960 <br>
 Ricardo Honorato RM364026 <br>
 
 
-VIDEO Youtube Explicativo:  LINK <br>
+VIDEO Youtube Explicativo:  [LINK](https://www.youtube.com/watch?v=oLilCQ-NvBc) <br>
   
 Arquivos:<br>
 Na pasta TC3-CleanerDataSet - O script em python para tratamento dos dados e limpeza dos mesmos.
@@ -40,13 +40,14 @@ Problemática 2:<br><br>
 Treinamento do modelo: <br>
 Usamos o unsloth, que é um framework Python de código aberto projetado para tornar o ajuste fino (fine-tuning) e o treinamento de grandes modelos de linguagem (LLMs) significativamente mais rápidos e com uso mais eficiente da memória. <br>
 
+Utilizamos o modelo unsloth/Meta-Llama-3.1-8B e o LORA
 A seguir iremos falar sobre as variaves, importante destacar que para redução de custos limitamos o número de procesadores para 2. <br><br>
 
 <b>Estrutura: Variável,  valor e descrição.</b><br>
 <b>per_device_train_batch_size</b>	= <b> Estamos utilizando 2. </b> - O tamanho do lote de treinamento por dispositivo (GPU) <br>
 <b>gradient_accumulation_steps</b> = <b>Estamos usando 4.</b> -  O número de etapas de retropropagação (backward passes) antes de realizar uma etapa de otimização (update). Ajuda a simular um lote maior.  <br>
 <b>warmup_steps</b> = <b>Estamos usando 5. </b> -  O número de etapas para aumentar a taxa de aprendizado (learning rate) linearmente a partir de 0.  <br>
-<b>max_steps</b> =  <b> Estamos usando 60. </b)- O número máximo de etapas de otimização (não épocas) para executar o treinamento. <br>
+<b>max_steps</b> =  <b> Estamos usando 60. </b>- O número máximo de etapas de otimização (não épocas) para executar o treinamento. <br>
 <b>learning_rate</b> = <b> 2e-4</b> -	A taxa de aprendizado inicial a ser usada para o otimizador. <br>
 <b>bf16</b> = Definido como <b>True</b> se o bfloat16 for suportado. - Se deve ser usada precisão de ponto flutuante de 16 bits Brain Float (bfloat16) para treinamento. <br>
 <b>logging_steps</b>	=  <b>1</b> (a cada etapa). -	A frequência com que o log de informações (como a perda de treinamento) deve ser relatado. <br>
