@@ -40,20 +40,22 @@ Usamos o unsloth, que é um framework Python de código aberto projetado para to
 
 A seguir iremos falar sobre as variaves, importante destacar que para redução de custos limitamos o número de procesadores para 2. <br><br>
 
-per_device_train_batch_size	- O tamanho do lote de treinamento por dispositivo (GPU) - <b> Estamos utilizando 2. </b> <br>
-gradient_accumulation_steps	- O número de etapas de retropropagação (backward passes) antes de realizar uma etapa de otimização (update). Ajuda a simular um lote maior. - Estamos usando  4. <br>
-warmup_steps - O número de etapas para aumentar a taxa de aprendizado (learning rate) linearmente a partir de 0. - Estamos usando  5. <br>
-max_steps	Inteiro	O número máximo de etapas de otimização (não épocas) para executar o treinamento. - Estamos usando  60. <br>
-learning_rate	Float	A taxa de aprendizado inicial a ser usada para o otimizador. Aqui é 2e-4 .<br>
-fp16	Booleano	Se deve ser usada precisão de ponto flutuante de 16 bits (float16) para treinamento. Definido como True se o bfloat16 não for suportado. <br>
-bf16	Booleano	Se deve ser usada precisão de ponto flutuante de 16 bits Brain Float (bfloat16) para treinamento. Definido como True se o bfloat16 for suportado. <br>
-logging_steps	Inteiro	A frequência com que o log de informações (como a perda de treinamento) deve ser relatado. Aqui é 1 (a cada etapa). <br>
-optim	String	O otimizador a ser usado. Neste caso, é o adamw_8bit, uma versão otimizada com 8 bits que economiza memória. <br>
-weight_decay	Float	O fator de penalização de L2 aplicado aos pesos do modelo para evitar overfitting. Aqui é 0.01. <br>
-lr_scheduler_type	String	O tipo de agendador (scheduler) para ajustar a taxa de aprendizado durante o treinamento. Aqui é linear. <br>
-seed	Inteiro	A semente (seed) aleatória para garantir a reprodutibilidade dos resultados. Neste caso, é 3407. <br>
-output_dir	String	O diretório onde os pontos de verificação (checkpoints) e os resultados do treinamento serão salvos. Aqui é outputs. <br>
-report_to	String/Lista	Para onde o treinamento deve ser reportado (por exemplo, "wandb", "tensorboard"). Neste caso, é none (nenhum). <br>
+<b>Estrutura: Variável, descrição e valor que usamos.</b><br>
+<b>per_device_train_batch_size</b>	- O tamanho do lote de treinamento por dispositivo (GPU) - <b> Estamos utilizando 2. </b> <br>
+<b>gradient_accumulation_steps</b>	- O número de etapas de retropropagação (backward passes) antes de realizar uma etapa de otimização (update). Ajuda a simular um lote maior. - Estamos usando  4. <br>
+<b>warmup_steps</b> - O número de etapas para aumentar a taxa de aprendizado (learning rate) linearmente a partir de 0. - Estamos usando  5. <br>
+<b>max_steps</b> -	O número máximo de etapas de otimização (não épocas) para executar o treinamento. - Estamos usando  60. <br>
+<b>learning_rate</b> -	A taxa de aprendizado inicial a ser usada para o otimizador. Aqui é 2e-4 .<br>
+
+<b>fp16</b> -	Se deve ser usada precisão de ponto flutuante de 16 bits (float16) para treinamento. Definido como True se o bfloat16 não for suportado. <br>
+<b>bf16</b> -	Se deve ser usada precisão de ponto flutuante de 16 bits Brain Float (bfloat16) para treinamento. Definido como True se o bfloat16 for suportado. <br>
+<b>logging_steps</b>	-	A frequência com que o log de informações (como a perda de treinamento) deve ser relatado. Aqui é 1 (a cada etapa). <br>
+<b>optim</b> -	O otimizador a ser usado. Neste caso, é o adamw_8bit, uma versão otimizada com 8 bits que economiza memória. <br>
+<b>weight_decay</b>	-	O fator de penalização de L2 aplicado aos pesos do modelo para evitar overfitting. Aqui é 0.01. <br>
+<b>lr_scheduler_type</b>	-	O tipo de agendador (scheduler) para ajustar a taxa de aprendizado durante o treinamento. Aqui é linear. <br>
+<b>seed</b>	-	A semente (seed) aleatória para garantir a reprodutibilidade dos resultados. Neste caso, é 3407. <br>
+<b>output_dir</b>	-	O diretório onde os pontos de verificação (checkpoints) e os resultados do treinamento serão salvos. Aqui é outputs. <br>
+<b>report_to</b>	- Para onde o treinamento deve ser reportado (por exemplo, "wandb", "tensorboard"). Neste caso, é none (nenhum). <br>
 
 
 
