@@ -40,7 +40,7 @@ Problemática 2:<br><br>
 Treinamento do modelo: <br>
 Usamos o unsloth, que é um framework Python de código aberto projetado para tornar o ajuste fino (fine-tuning) e o treinamento de grandes modelos de linguagem (LLMs) significativamente mais rápidos e com uso mais eficiente da memória. <br>
 
-Utilizamos o modelo unsloth/Meta-Llama-3.1-8B e o LORA
+<b>Utilizamos o modelo unsloth/Meta-Llama-3.1-8B e o LORA</b><br><br><br>
 A seguir iremos falar sobre as variaves, importante destacar que para redução de custos limitamos o número de procesadores para 2. <br><br>
 
 <b>Estrutura: Variável,  valor e descrição.</b><br>
